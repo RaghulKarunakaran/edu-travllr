@@ -1,0 +1,286 @@
+<div class="col-12 header p-3">
+  <p class="mx-4 font-style-1">{{ currentOption }}</p>
+</div>
+<div class="col-12 d-flex">
+  <div
+    class="col-2 mt-4 ms-5 me-2 upload-div d-flex flex-column align-items-center justify-content-around"
+  >
+    <input
+      class="col-12"
+      style="display: none"
+      type="file"
+      (change)="onFileSelected($event)"
+      #fileInput
+    />
+    <img
+      class="col-10"
+      *ngIf="!image1"
+      src="/assets/images/app_det_myprof/myprofile/Image_dup.svg"
+      alt="image not found"
+    />
+    <img class="col-10" *ngIf="image1" [src]="image1" alt="image not found" />
+    <button type="button" class="btn" (click)="fileInput.click()">
+      Upload Photo
+    </button>
+  </div>
+  <div class="col-8 ms-2 mt-4 form-div">
+    <form class="col-12" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="col-10 p-4 input-form-div">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            formControlName="firstname"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('firstname')?.valid &&
+              profileForm.get('firstname')?.touched
+            "
+            >Enter a valid first name</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+               <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            formControlName="lastname"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('lastname')?.valid &&
+              profileForm.get('lastname')?.touched
+            "
+            >Enter a valid last name</span
+          >
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.username').valid&&SignupForm.get('userData.username').touched">
+               <span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+               <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="currentAddress">Current Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="currentAddress"
+            formControlName="currentaddress"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('currentaddress')?.valid &&
+              profileForm.get('currentaddress')?.touched
+            "
+            >Enter a valid address</span
+          >
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.username').valid&&SignupForm.get('userData.username').touched">
+               <span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+               <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('email')?.valid &&
+              profileForm.get('email')?.touched
+            "
+            >Enter a valid email id</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            formControlName="state"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('state')?.valid &&
+              profileForm.get('state')?.touched
+            "
+            >Enter a valid state</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country Of Citizenship</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            formControlName="countryofcitizenship"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('countryofcitizenship')?.valid &&
+              profileForm.get('countryofcitizenship')?.touched
+            "
+            >Enter a valid country</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="dateofbirth">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateofbirth"
+            formControlName="dateofbirth"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('dateofbirth')?.valid &&
+              profileForm.get('dateofbirth')?.touched
+            "
+            >Enter a valid date</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country Code</label>
+          <input
+            type="number"
+            class="form-control"
+            id="country"
+            formControlName="countrycode"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('countrycode')?.valid &&
+              profileForm.get('countrycode')?.touched
+            "
+            >Enter a valid country code</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gender"
+            formControlName="gender"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('gender')?.valid &&
+              profileForm.get('gender')?.touched
+            "
+            >Enter a valid gender</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="mobile"
+            formControlName="mobilenumber"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('mobilenumber')?.valid &&
+              profileForm.get('mobilenumber')?.touched
+            "
+            >Enter a valid mobile number</span
+          >
+
+          <!--<span class="help-block" *ngIf="!SignupForm.get('userData.email').valid && SignupForm.get('userData.email').touched">
+              please enter a valid email id
+             </span>-->
+        </div>
+
+        <!--<div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" [value]="gender"
+            formControlName = "gender">{{gender}}
+          </label>
+        </div>-->
+
+        <!--<div formArrayName="hobbies">
+          <h4>Hobbies</h4>
+          <button class="btn btn-default"
+          type="button" (click)="onAddHobby()" >Add Hobby</button>
+
+          <div class="form-group"
+          *ngFor="let hobbyControl of SignupForm.get('hobbies').controls; let i=index">
+            <input type="text" class="form-control"
+            [formControlName]="i">
+          </div>
+        </div>-->
+
+        <!--<span class="help-block" *ngIf="!SignupForm.valid && SignupForm.touched">
+             please enter valid data
+           </span>-->
+      </div>
+
+      <div class="col-10 form-bottom p-4 d-flex justify-content-end">
+        <div class="col-2 d-flex justify-content-between">
+          <!--<button class="btn back col-5" type="button">Back</button>-->
+          <button
+            class="btn save col-12"
+            [disabled]="!profileForm.valid"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

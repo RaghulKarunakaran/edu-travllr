@@ -1,0 +1,141 @@
+/*.nav-container {
+  width: 100%;
+}*/
+.main-container {
+  width: 100%;
+  margin-top: 102px;
+  position: relative;
+}
+.page-route {
+  width: 90%;
+  font-size: 12px;
+  font-weight: 600;
+  /* position: absolute; */
+  letter-spacing: 0.01em;
+  color: #16161d;
+  margin-left: 5%;
+}
+.page-heading {
+  width: 90%;
+  font-family: "Montserrat" sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 5%;
+}
+.hoz-dashed-line {
+  width: 65%;
+  margin-left: 5%;
+  border: 1px dashed #c4c4c4;
+}
+.column {
+  width: 20%;
+  height: 50%;
+  padding: 10px 10px 10px 10px;
+  /* background-color: rgb(196, 204, 207); */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 16px;
+}
+.col1 {
+  margin-left: 15%;
+}
+.col3 {
+  margin-right: 15%;
+}
+.address-card:hover {
+  box-shadow: 4px 3px 8px 1px #969696;
+  -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}
+.row1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.worm-vector-one {
+  position: absolute;
+  width: 10%;
+  height: 150px;
+  top: 5%;
+  left: 90%;
+}
+.map {
+  width: 80%;
+  margin-left: 10%;
+  /*padding: 20px 100px 0px 100px;*/
+}
+.text {
+  padding: 40px 60px 40px 80px;
+  font-size: 37px;
+  font-weight: bold;
+  width: 50%;
+}
+.small-form {
+  width: 50%;
+  float: right;
+  justify-content: center;
+  padding: 60px 40px 0px 20px;
+}
+/*.second-row {
+   width: 100%;
+   padding: 0px 110px 0px 110px;
+   height: 300px;
+ }*/
+.row2 {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  height: 416px;
+  background-color: #f6faf7;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.field {
+  outline: none;
+}
+.dot-vector-one {
+  position: absolute;
+  width: 10%;
+  top: 30%;
+  left: 85%;
+  z-index: -1;
+}
+.worm-vector-two {
+  position: absolute;
+  width: 10%;
+  height: 150px;
+  top: 55%;
+  left: 5%;
+  z-index: -1;
+}
+/*.container-3 {
+  background-color: #ecf1ff;
+  width: 100%;
+  height: 444px;
+}*/
+.form-control {
+  width: 60%;
+  background-color: #f6faf7;
+  box-shadow: none;
+  border-color: white;
+  border-bottom-color: black;
+}
+.btn {
+  width: 60%;
+  height: 48px;
+  border-radius: 6px;
+  margin-top: 5%;
+}
+.dot-vector-two {
+  position: absolute;
+  width: 10%;
+  top: 80%;
+  left: 0%;
+  z-index: -1;
+}

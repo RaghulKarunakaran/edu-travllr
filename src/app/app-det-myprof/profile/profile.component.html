@@ -1,0 +1,296 @@
+<div
+  class="col-12 header p-3 d-flex justify-content-between align-items-center"
+>
+  <div class="col-4 mx-4 d-flex flex-column justify-content-around">
+    <p class="font-style-1">{{ "Application" + " " + currentOption }}</p>
+    <div class="mt-3 d-flex justify-content-between">
+      <div class="d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <img
+            *ngIf="page == 1"
+            src="/assets/images/app_det_myprof/applicationprofile/Personal Document(green).svg"
+          />
+          <img
+            *ngIf="page == 2"
+            src="/assets/images/app_det_myprof/applicationprofile/Personal Document.svg"
+          />
+          <p class="font-style-2" [ngClass]="{ 'font-style-3': page == 1 }">
+            Personal Details
+          </p>
+        </div>
+        <div class="progress" *ngIf="page == 1">
+          <div
+            class="progress-bar green-hor-line"
+            role="progressbar"
+            style="width: 100%"
+            aria-valuenow="100"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+      <div class="d-flex flex-column justify-content-between">
+        <div class="d-flex align-items-center">
+          <img
+            *ngIf="page == 1"
+            src="/assets/images/app_det_myprof/applicationprofile/education.svg"
+          />
+          <img
+            *ngIf="page == 2"
+            src="/assets/images/app_det_myprof/applicationprofile/education(green).svg"
+          />
+          <p class="font-style-2" [ngClass]="{ 'font-style-3': page == 2 }">
+            Educational Details
+          </p>
+        </div>
+        <div class="progress" *ngIf="page == 2">
+          <div
+            class="progress-bar green-hor-line"
+            role="progressbar"
+            style="width: 100%"
+            aria-valuenow="100"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 d-flex justify-content-around align-items-center">
+    <circle-progress
+      *ngIf="page == 1"
+      [percent]="60"
+      [radius]="30"
+      [title]="'60%'"
+    ></circle-progress>
+    <circle-progress
+      *ngIf="page == 2"
+      [percent]="100"
+      [radius]="30"
+      [title]="'100%'"
+    ></circle-progress>
+    <p class="font-style-4">{{ "Application" + " " + currentOption }}</p>
+  </div>
+</div>
+<div class="col-12">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div
+      class="col-10 m-5 bg-white p-3"
+      formGroupName="firstsection"
+      *ngIf="page == 1"
+    >
+      <div class="d-flex">
+        <div class="form-group col-4 p-3">
+          <label class="font-style-5" for="semester">Semester Applying </label>
+          <input
+            type="text"
+            class="form-control"
+            id="semester"
+            formControlName="semesterapplying"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('firstsection.semesterapplying')?.valid &&
+              profileForm.get('firstsection.semesterapplying')?.touched
+            "
+            >Enter the semester you are applying for</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+        <div class="form-group col-4 p-3">
+          <label class="font-style-5" for="year">Year </label>
+          <input
+            type="number"
+            class="form-control"
+            id="year"
+            formControlName="year"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !profileForm.get('firstsection.year')?.valid &&
+              profileForm.get('firstsection.year')?.touched
+            "
+            >Enter the semester you are applying for</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+      </div>
+      <p class="p-3 font-style-6">Personal Details</p>
+      <hr class="m-3" />
+      <div class="d-flex flex-wrap">
+        <div class="form-group col-4 p-3" *ngFor="let control of formcontrols">
+          <label class="font-style-5" for="{{ control.control }}"
+            >{{ control.label }}
+          </label>
+          <input
+            type="{{ control.type }}"
+            class="form-control"
+            id="{{ control.control }}"
+            formControlName="{{ control.control }}"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !firstsectionFormGroup.controls[control.control]?.valid &&
+              firstsectionFormGroup.controls[control.control]?.touched
+            "
+            >Enter the valid {{ control.label }}</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-10 m-5 bg-white p-3"
+      formGroupName="secondsection"
+      *ngIf="page == 1"
+    >
+      <p class="p-3 font-style-6">Permanent Address</p>
+      <hr class="m-3" />
+      <div class="d-flex flex-wrap">
+        <div class="form-group col-4 p-3" *ngFor="let control of formcontrols2">
+          <label class="font-style-5" for="{{ control.control }}"
+            >{{ control.label }}
+          </label>
+          <input
+            type="{{ control.type }}"
+            class="form-control"
+            id="{{ control.control }}"
+            formControlName="{{ control.control }}"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !secondsectionFormGroup.controls[control.control]?.valid &&
+              secondsectionFormGroup.controls[control.control]?.touched
+            "
+            >Enter the valid {{ control.label }}</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-10 m-5 bg-white p-3"
+      formGroupName="thirdsection"
+      *ngIf="page == 2"
+    >
+      <p class="p-3 font-style-6">Parents Education Details</p>
+      <hr class="m-3" />
+      <div class="col-8 d-flex flex-wrap">
+        <div class="form-group col-6 p-3" *ngFor="let control of formcontrols3">
+          <label class="font-style-5" for="{{ control.control }}"
+            >{{ control.label }}
+          </label>
+          <input
+            type="{{ control.type }}"
+            class="form-control"
+            id="{{ control.control }}"
+            formControlName="{{ control.control }}"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !thirdsectionFormGroup.controls[control.control]?.valid &&
+              thirdsectionFormGroup.controls[control.control]?.touched
+            "
+            >Enter the valid {{ control.label }}</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-10 m-5 bg-white p-3"
+      formGroupName="fourthsection"
+      *ngIf="page == 2"
+    >
+      <p class="p-3 font-style-6">Academic details</p>
+      <hr class="m-3" />
+      <div class="d-flex flex-wrap">
+        <div class="form-group col-4 p-3" *ngFor="let control of formcontrols4">
+          <label class="font-style-5" for="{{ control.control }}"
+            >{{ control.label }}
+          </label>
+          <input
+            type="{{ control.type }}"
+            class="form-control"
+            id="{{ control.control }}"
+            formControlName="{{ control.control }}"
+          />
+          <span
+            style="color: red"
+            *ngIf="
+              !fourthsectionFormGroup.controls[control.control]?.valid &&
+              fourthsectionFormGroup.controls[control.control]?.touched
+            "
+            >Enter the valid {{ control.label }}</span
+          >
+          <!--<span *ngIf = "SignupForm.get('userData.username').errors['nameIsForbidden']">name is invalid</span>
+             <span *ngIf = "SignupForm.get('userData.username').errors['required']">field is required</span>
+           </span>-->
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end col-10 m-5 p-3" *ngIf="page == 1">
+      <div class="d-flex col-3">
+        <p>{{ firstsectionFormGroup.valid }}</p>
+        <p>{{ secondsectionFormGroup.valid }}</p>
+        <button
+          class="btn whitebutton col-6 mx-2"
+          type="button"
+          (click)="reset()"
+        >
+          Discard
+        </button>
+        <button
+          class="btn greenbutton col-6 mx-2"
+          type="button"
+          (click)="screen('next')"
+          [disabled]="
+            !firstsectionFormGroup.valid || !secondsectionFormGroup.valid
+          "
+        >
+          Next
+        </button>
+        <!--[disabled]="!firstsectionFormGroup.valid && !secondsectionFormGroup.valid"-->
+      </div>
+    </div>
+    <div class="d-flex justify-content-end col-10 m-5 p-3" *ngIf="page == 2">
+      <div class="d-flex col-3">
+        <p>{{ thirdsectionFormGroup.valid }}</p>
+        <p>{{ fourthsectionFormGroup.valid }}</p>
+        <button
+          class="btn whitebutton col-6 mx-2"
+          type="button"
+          (click)="screen('prev')"
+        >
+          Back
+        </button>
+        <button
+          class="btn greenbutton col-6 mx-2"
+          type="submit"
+          (click)="onSubmit()"
+          [disabled]="
+            !thirdsectionFormGroup.valid || !fourthsectionFormGroup.valid
+          "
+        >
+          Save
+        </button>
+        <!--[disabled]="!thirdsectionFormGroup.valid && !fourthsectionFormGroup.valid"-->
+      </div>
+    </div>
+  </form>
+</div>

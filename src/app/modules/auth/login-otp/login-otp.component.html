@@ -1,0 +1,52 @@
+<!-- <div class="container"> -->
+
+<div class="col">
+  <div class="col1-greencard">
+    <!--<img src="assets\login img.png" />-->
+    <!--<img class="green-card" src="assets/images/sign-up/Rectangle 6443.svg" />-->
+    <div class="col1-whitecard">
+      <img id="whitecard-img" src="assets/images/otp/Book lover-pana 1.svg" />
+      <div id="whitecard-div">
+        <p id="whitecard-p1">Study Abroad</p>
+        <p id="whitecard-p2">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="heading">
+      <h1 class="page-heading">OTP Verification</h1>
+      <br />
+      <span class="heading-text">Enter otp sent to mobile number</span>
+    </div>
+    <br />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" action="" ngNativeValidate>
+      <br />
+      <div class="from-group">
+        <input
+          #formRow
+          type="text"
+          formControlName="{{ input }}"
+          class="small-otp-input"
+          maxlength="1"
+          *ngFor="let input of formInput; index as i"
+          (keyup)="keyUpEvent($event, i)"
+        />
+      </div>
+      <br />
+      <div class="resend-link">
+        <a class="resend">Resend</a>
+      </div>
+      <br /><br /><br /><br />
+      <div class="button-otp">
+        <button [disabled]="!form.valid" type="submit" class="btn otpButton">
+          Verify
+        </button>
+      </div>
+    </form>
+    <img class="otp-vector" src="assets/images/sign-up/Group 11170.svg" />
+  </div>
+</div>
+
+<!-- </div> -->

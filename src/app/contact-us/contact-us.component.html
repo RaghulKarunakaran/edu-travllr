@@ -1,0 +1,115 @@
+<div>
+  <app-common-navbar></app-common-navbar>
+</div>
+<div class="main-container">
+  <div class="page-route">
+    <span>Home<span> ></span> Footer<span> ></span> Contact Us</span>
+  </div>
+  <div class="page-heading">< <span> Contact Us</span></div>
+  <hr class="hoz-dashed-line" />
+  <img
+    class="worm-vector-one"
+    src="assets\images\contact-us_page\Vector (5).svg"
+  />
+  <div class="row1">
+    <div class="column address-card col1">
+      <p style="color: #21b873">Office, Anna Nagar</p>
+      <p>
+        <img src="assets\images\contact-us_page\Rectangle 6597.png" /> Lorem
+        ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh magna aliquam erat volutpat.
+      </p>
+      <p><img src="assets\images\contact-us_page\Vector.png" /> 6789054321</p>
+      <p>
+        <img src="assets\images\contact-us_page\Vector (1).png" />
+        emailID@gmail.com
+      </p>
+    </div>
+    <div class="column address-card col2">
+      <p style="color: #21b873">Chennai Office, OMR</p>
+      <p>
+        <img src="assets\images\contact-us_page\Rectangle 6597.png" /> Lorem
+        ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh magna aliquam erat volutpat.
+      </p>
+      <p><img src="assets\images\contact-us_page\Vector.png" /> 6789054321</p>
+      <p>
+        <img src="assets\images\contact-us_page\Vector (1).png" />
+        email@gmail.com
+      </p>
+    </div>
+    <div class="column address-card col3">
+      <p style="color: #21b873">Pune Office, Mumbai</p>
+      <p>
+        <img src="assets\images\contact-us_page\Rectangle 6597.png" /> Lorem
+        ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh magna aliquam erat volutpat.
+      </p>
+      <p><img src="assets\images\contact-us_page\Vector.png" /> 6789054321</p>
+      <p>
+        <img src="assets\images\contact-us_page\Vector (1).png" />
+        email@gmail.com
+      </p>
+    </div>
+    <!--<img
+    class="worm-vector-one"
+    src="assets\images\contact-us_page\Vector (4).svg"
+  />-->
+  </div>
+  <img
+    class="dot-vector-one"
+    src="assets\images\contact-us_page\Group 11168.svg"
+  />
+  <img
+    class="worm-vector-two"
+    src="assets\images\contact-us_page\Vector (5).svg"
+  />
+  <div class="container-2">
+    <img class="map" src="assets\images\contact-us_page\Rectangle 6536.png" />
+    <div class="row2">
+      <div class="text">GET IN TOUCH</div>
+      <div class="small-form">
+        <form (ngSubmit)="OnSubmit()" #f="ngForm">
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            ngModel
+            name="username"
+            required
+            placeholder="Name"
+          />
+          <br />
+          <input
+            type="text"
+            id="phonenumber"
+            class="form-control"
+            ngModel
+            name="phonenumber"
+            required
+            placeholder="Phone Number"
+          />
+          <br />
+          <input
+            type="email"
+            id="emailid"
+            class="form-control"
+            ngModel
+            name="emailid"
+            required
+            placeholder="Email ID"
+          />
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <img
+    class="dot-vector-two"
+    src="assets\images\contact-us_page\Group 11168.svg"
+  />
+</div>
+<div>
+  <app-common-footer></app-common-footer>
+</div>

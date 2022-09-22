@@ -1,0 +1,396 @@
+<div>
+  <app-common-navbar></app-common-navbar>
+</div>
+<div class="container-1">
+  <div class="subc-1">
+    <p class="font-att1 c1-first-p">
+      Courses for you to pursue your higher studies
+    </p>
+  </div>
+  <div class="subc-2">
+    <div class="subc-2-1">
+      <div class="subc2-1-1">
+        <p class="subc-2-2-font1">Filters</p>
+        <hr />
+      </div>
+      <div class="subc2-1-2">
+        <p class="subc-2-2-font2">Countries</p>
+        <input
+          type="text"
+          id="country_search"
+          class="form-control"
+          ngModel
+          name="search"
+          required
+          placeholder="search"
+        />
+        <table>
+          <tbody id="tbody1">
+            <tr *ngFor="let country of countries">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-checkbox"
+                  type="checkbox"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ country.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-3">
+        <div
+          class="subc2-1-3-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample3"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="Major_click()"
+        >
+          <!--(click)="Major_click()"-->
+          <p class="subc-2-2-font2">Major</p>
+          <img
+            [ngClass]="[
+              isMajoropen ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample3">
+          <!--*ngIf="isMajoropen"-->
+          <tbody>
+            <tr *ngFor="let list of Major">
+              <!--<th scope="row">
+              <input class="form-check-input" type="checkbox" />
+            </th>-->
+              <td class="subc-2-2-font3">{{ list.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-4">
+        <div
+          class="subc2-1-4-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample4"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="univ_click()"
+        >
+          <!--(click)="univ_click()-->
+          <p class="subc-2-2-font2">University type</p>
+          <img
+            [ngClass]="[
+              isuniv_type ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample4">
+          <!--*ngIf="isuniv_type"-->
+          <tbody>
+            <tr *ngFor="let list of univ_type">
+              <!--<th scope="row">
+                <input class="form-check-input" type="checkbox" />
+              </th>-->
+              <td class="subc-2-2-font3">{{ list.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-5">
+        <div
+          class="subc2-1-5-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample5"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="intake_click()"
+        >
+          <!--(click)="intake_click()-->
+          <p class="subc-2-2-font2">Intake</p>
+          <img
+            [ngClass]="[isintake ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180']"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample5">
+          <!--*ngIf="isintake"-->
+          <tbody>
+            <tr *ngFor="let list of intake">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-radio"
+                  type="radio"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.range }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-6">
+        <div
+          class="subc2-1-6-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample6"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="scholarship_click()"
+        >
+          <!--(click)="scholarship_click()-->
+          <p class="subc-2-2-font2">Scholarship Availability</p>
+          <img
+            [ngClass]="[
+              isscholarship ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample6">
+          <!--*ngIf="isscholarship"-->
+          <tbody>
+            <tr *ngFor="let list of scholarship_availability">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-radio"
+                  type="radio"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.option }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-7">
+        <div
+          class="subc2-1-7-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample7"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="course_click()"
+        >
+          <!--(click)="course_click()"-->
+          <p class="subc-2-2-font2">Course Duration</p>
+          <img
+            [ngClass]="[iscourse ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180']"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample7">
+          <!--*ngIf="iscourse"-->
+          <tbody>
+            <tr *ngFor="let list of course_duration">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-radio"
+                  type="radio"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.duration }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-8">
+        <div
+          class="subc2-1-8-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample8"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="ep_exam_click()"
+        >
+          <!--(click)="ep_exam_click()"-->
+          <p class="subc-2-2-font2">English Proficiency Exam</p>
+          <img
+            [ngClass]="[
+              isep_exam ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample8">
+          <!--*ngIf="isep_exam"-->
+          <tbody>
+            <tr *ngFor="let list of English_proficiency_exam">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-checkbox"
+                  type="checkbox"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.exam }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-9">
+        <div
+          class="subc2-1-9-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample9"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="ap_exam_click()"
+        >
+          <!--(click)="ap_exam_click()"-->
+          <p class="subc-2-2-font2">Academic Proficiency Exam</p>
+          <img
+            [ngClass]="[
+              isap_exam ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample9">
+          <!--*ngIf="isap_exam"-->
+          <tbody>
+            <tr *ngFor="let list of Academic_proficiency_exam">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-checkbox"
+                  type="checkbox"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.exam }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="subc2-1-10">
+        <div
+          class="subc2-1-10-1"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample10"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          (click)="ranking_click()"
+        >
+          <!--(click)="ranking_click()"-->
+          <p class="subc-2-2-font2">Ranking</p>
+          <img
+            [ngClass]="[
+              isranking ? 'subc2-1-3-1-img-0' : 'subc2-1-3-1-img-180'
+            ]"
+            src="assets\images\university\Fill 6.svg"
+          />
+        </div>
+        <table class="collapse" id="collapseExample10">
+          <!--*ngIf="isranking"-->
+          <tbody>
+            <tr *ngFor="let list of Ranking">
+              <th scope="row">
+                <input
+                  class="form-check-input subc2-input-checkbox"
+                  type="checkbox"
+                />
+              </th>
+              <td class="subc-2-2-font3">{{ list.rank }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="subc-2-2">
+      <div class="subc-2-2-1">
+        <img src="assets\images\university\search (2).svg" />
+        <input
+          type="text"
+          class="form-control"
+          ngModel
+          name="search"
+          required
+          placeholder="Search for Colleges or Courses"
+        />
+      </div>
+      <p class="subc2-2-firstp">Results (16)</p>
+      <div class="subc-2-2-2">
+        <div class="subc-2-2-2-1" *ngFor="let univ of universities">
+          <div class="subc-2-2-2-1-left">
+            <img class="subc-2-2-2-1-left-img" src="{{ univ.left_img }}" />
+          </div>
+          <div class="subc-2-2-2-1-right">
+            <div class="subc-2-2-2-1-right-div1">
+              <div class="subc-2-2-2-1-right-div1-0">
+                <img src="{{ univ.right_div1_logo }}" />
+                <div class="subc-2-2-2-1-right-div1-1">
+                  <p>
+                    {{ univ.right_div1_univ_name }}<br /><span>{{
+                      univ.right_div1_univ_loc
+                    }}</span>
+                  </p>
+                </div>
+              </div>
+              <img src="assets\images\university\Group 11190.svg" />
+            </div>
+            <div class="subc-2-2-2-1-right-div2">
+              <div class="subc-2-2-2-1-right-div2-1">
+                <img src="assets\images\university\Group 11301.svg" />
+                <div class="subc-2-2-2-1-right-div2-1-1">
+                  <p>
+                    {{ univ.right_div2_p1_1 }}<br />
+                    <span>{{ univ.right_div2_p1_2 }}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="subc-2-2-2-1-right-div2-2">
+                <img src="assets\images\university\Group 11303.svg" />
+                <div class="subc-2-2-2-1-right-div2-2-1">
+                  <p>
+                    {{ univ.right_div2_p2_1 }}<br />
+                    <span>{{ univ.right_div2_p2_2 }}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="subc-2-2-2-1-right-div2-3">
+                <img src="assets\images\university\Group 11305.svg" />
+                <div class="subc-2-2-2-1-right-div2-3-1">
+                  <p>
+                    {{ univ.right_div2_p3_1 }}<br />
+                    <span>{{ univ.right_div2_p3_2 }}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="subc-2-2-2-1-right-div3">
+              <p>
+                {{ univ.right_div3_p }}
+              </p>
+            </div>
+            <div class="subc-2-2-2-1-right-div4">
+              <div class="subc-2-2-2-1-right-div4-1">
+                <li>{{ univ.right_div4_li }}</li>
+                <li>{{ univ.right_div4_li }}</li>
+                <li>{{ univ.right_div4_li }}</li>
+                <li>{{ univ.right_div4_li }}</li>
+                <li>{{ univ.right_div4_li }}</li>
+              </div>
+              <div class="subc-2-2-2-1-right-div4-2">
+                <button class="btn btn-success">View More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="c1-vector-top1" src="assets\images\university\Vector (7).svg" />
+  <img
+    class="c1-vector-top2"
+    src="assets\images\university\Group 11168 (1).svg"
+  />
+  <img
+    class="c1-vector-bottom"
+    src="assets\images\university\Group 11169 (1).svg"
+  />
+</div>

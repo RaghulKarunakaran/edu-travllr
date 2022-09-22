@@ -1,0 +1,97 @@
+<app-common-navbar></app-common-navbar>
+<div
+  id="main-container"
+  class="container-fluid"
+  style="background-image: url('/assets/images/app_det_myprof/1976241.png')"
+>
+  <div class="col-12 d-flex">
+    <div class="col-3 d-flex justify-content-end">
+      <div class="col-8 d-flex flex-column menu-parent-div px-3 py-4">
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('Dashboard')"
+          [ngStyle]="{
+            'background-color': option === 'Dashboard' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/Dashboard.svg" />
+          <p>Dashboard</p>
+        </div>
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('My profile')"
+          [ngStyle]="{
+            'background-color': option === 'My profile' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/user.svg" />
+          <p>My profile</p>
+        </div>
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('Profile')"
+          [ngStyle]="{
+            'background-color': option === 'Profile' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/user.svg" />
+          <p>Profile</p>
+        </div>
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('Application Documents')"
+          [ngStyle]="{
+            'background-color':
+              option === 'Application Documents' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/briefcase.svg" />
+          <p>Application Documents</p>
+        </div>
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('Wishlist')"
+          [ngStyle]="{
+            'background-color': option === 'Wishlist' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/wishlist.svg" />
+          <p>Wishlist</p>
+        </div>
+        <div
+          class="d-flex menu-div align-items-center"
+          (click)="selectedOption('Shortlist')"
+          [ngStyle]="{
+            'background-color': option === 'Shortlist' ? '#21B873' : 'white'
+          }"
+        >
+          <img class="mx-4" src="/assets/images/app_det_myprof/shortlist.svg" />
+          <p>Shortlist</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="col-12" *ngIf="option == 'Dashboard'">
+        <app-dashboard [currentOption]="option"></app-dashboard>
+      </div>
+      <div class="col-12" *ngIf="option == 'My profile'">
+        <app-my-profile [currentOption]="option"></app-my-profile>
+      </div>
+      <div class="col-12" *ngIf="option == 'Profile'">
+        <app-profile [currentOption]="option"></app-profile>
+      </div>
+      <div class="col-12" *ngIf="option == 'Application Documents'">
+        <app-application-documents
+          [currentOption]="option"
+        ></app-application-documents>
+      </div>
+      <div class="col-12" *ngIf="option == 'Wishlist'">
+        <app-wishlist [currentOption]="option"></app-wishlist>
+      </div>
+      <div class="col-12" *ngIf="option == 'Shortlist'">
+        <app-shortlist [currentOption]="option"></app-shortlist>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<app-common-footer></app-common-footer>-->

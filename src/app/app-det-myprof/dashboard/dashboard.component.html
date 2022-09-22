@@ -1,0 +1,43 @@
+<div class="col-12 header p-3">
+  <p class="mx-4 font-style-1">{{ currentOption }}</p>
+</div>
+<div class="col-10 main-dashboard mt-4 ms-5 me-5 pt-5 ps-4 pe-5">
+  <div class="col-10 dashboard-table p-4">
+    <div class="col-12 d-flex justify-content-between dashboard-heading">
+      <p class="first-style">Application</p>
+      <div class="d-flex">
+        <p>sortby</p>
+        <img src="/assets/images/app_det_myprof/dashboard/down_arrow.svg" />
+      </div>
+    </div>
+    <table class="col-12">
+      <tr class="col-12 table-header">
+        <th class="col-4 text-left p-3 second-style">Course Name</th>
+        <th class="col-2 text-center p-3 second-style">University</th>
+        <th class="col-2 text-center p-3 second-style">Date</th>
+        <th class="col-2 text-center p-3 second-style">Status</th>
+        <th class="col-2 text-center p-3 second-style">Actions</th>
+      </tr>
+      <tr class="col-12" *ngFor="let course of dashboardCourses">
+        <td class="col-4 text-left p-3 third-style">
+          {{ course.courseName }}
+        </td>
+        <td class="col-2 text-center p-3 third-style">
+          {{ course.university }}
+        </td>
+        <td class="col-2 text-center p-3 third-style">{{ course.date }}</td>
+        <td class="col-2 text-center p-3 third-style">
+          <span
+            class="p-2 rounded"
+            style="color: white"
+            [ngStyle]="{ backgroundColor: getStatusColor(course) }"
+            >{{ course.status }}</span
+          >
+        </td>
+        <td class="col-2 text-center p-3 third-style">
+          <img src="{{ course.Actions }}" />
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

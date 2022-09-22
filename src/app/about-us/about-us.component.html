@@ -1,0 +1,75 @@
+<div>
+  <app-common-navbar></app-common-navbar>
+</div>
+<div class="about-us-container">
+  <div class="sub-container-1">
+    <p id="subc1-p1">Lorem ipsum dolor sit amet</p>
+    <img id="subc1-img1" src="assets\images\about-us\Vector 6 (3).svg" />
+  </div>
+  <div class="sub-container-2">
+    <div class="sub-container-2-1">
+      <p class="subc2-p" id="subc2-p1">About edutravllr</p>
+      <p class="subc2-p subc2-p2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel suspendisse
+        ultrices diam sed. Ut pharetra odio ullamcorper erat vel sed. Elementum
+        dolor sit lacus, morbi. Nisi odio ac est lobortis.Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Vel suspendisse ultrices diam sed. Ut
+        pharetra odio ullamcorper erat vel sed. Elementum dolor sit lacus,
+        morbi. Nisi odio ac est lobortis.
+      </p>
+      <p class="subc2-p subc2-p2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel suspendisse
+        ultrices diam sed. Ut pharetra odio ullamcorper erat vel sed. Elementum
+        dolor sit lacus, morbi. Nisi odio ac est lobortis.Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit. Vel suspendisse ultrices diam sed. Ut
+        pharetra odio ullamcorper erat vel sed. Elementum dolor sit lacus,
+        morbi. Nisi odio ac est lobortis.
+      </p>
+    </div>
+    <div class="sub-container-2-2">
+      <div class="subc2-2-0">
+        <p class="sub-c-2-2-font subc2-2-first">Our Team</p>
+        <div id="subc2-2-0-1">
+          <img
+            src="assets\images\about-us\Group 11298.svg"
+            (click)="scrollLeft()"
+          />
+          <img
+            src="assets\images\about-us\Group 11299.svg"
+            (click)="scrollRight()"
+          />
+        </div>
+      </div>
+      <div #widgetsContent class="subc2-2-1">
+        <div class="subc2-2-1-1" *ngFor="let people of people_data">
+          <p id="sub-c-2-2-1-1-p1" class="sub-c-2-2-font">
+            {{ people.position }}
+          </p>
+          <p id="sub-c-2-2-1-1-p2" class="sub-c-2-2-font">{{ people.name }}</p>
+          <img src="{{ people.img }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sub-container-3">
+    <div class="sc3-div-1">
+      <p class="sc3-p" id="sc3-first-p">Our core Values</p>
+    </div>
+    <div class="sc3-div-2">
+      <div class="sc3-div-2-1" *ngFor="let value of value_data">
+        <div class="sc3-div-2-1-1">
+          <img src="{{ value.icon }}" />
+          <p class="sc3-p sc3-second-p">{{ value.value }}</p>
+        </div>
+        <div class="sc3-div-2-1-2">
+          <p class="sc3-p sc3-third-p">{{ value.title }}</p>
+          <p class="sc3-p sc3-fourth-p">{{ value.para }}</p>
+        </div>
+      </div>
+    </div>
+    <img id="sc3-abs-img" src="assets/images/about-us/Subtract.svg" />
+  </div>
+</div>
+<div>
+  <app-common-footer></app-common-footer>
+</div>

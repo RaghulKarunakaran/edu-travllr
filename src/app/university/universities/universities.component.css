@@ -1,0 +1,10 @@
+.container1 {
+  background: #ffffff;
+  border-radius: 16px;
+}
+.c1-left {
+  width: 30%;
+}
+.c1-right {
+  width: 70%;
+}

@@ -1,0 +1,92 @@
+<div>
+  <app-common-navbar></app-common-navbar>
+</div>
+<div class="main-container">
+  <div class="sub-container-1">
+    <div class="sc1 cont1">
+      <p class="sc1-first-text">Home</p>
+      <img src="assets\images\blogs\Group.svg" />
+      <p class="sc1-first-text">Blog</p>
+    </div>
+    <div class="sc1 cont2">
+      <img src="assets\images\blogs\arrow-drop-left-line.svg" />
+      <p class="sc1-second-text">Blog</p>
+    </div>
+    <img
+      class="sc1 sc1-first-img"
+      src="assets\images\blogs\How-to-study-abroad-1024x536 1.svg"
+    />
+    <div class="sub-container-2">
+      <p class="sc2 sc2-first-text">8 breath taking spots at new zealand</p>
+      <p class="sc2 sc2-second-text">
+        <span>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit.
+        Tellus tristique pellentesque ac nunc, magna blandit ac. Vitae purus
+        vestibulum aliquet porta egestas donec suspendisse massa, nulla.
+      </p>
+      <img class="sc2" src="assets\images\blogs\Arrow 9.svg" />
+    </div>
+  </div>
+  <div class="sub-container-3">
+    <div class="sc3 sc3-header">
+      <p class="sc3-header-p">Country wise Blog</p>
+      <div class="sc3-header-div1">
+        <input
+          type="text"
+          id="search"
+          class="form-control"
+          ngModel
+          name="search"
+          required
+          placeholder="search"
+        />
+        <img src="assets\images\blogs\search (1).svg" />
+      </div>
+    </div>
+    <hr class="sc3 sc3-hor-line" />
+    <div class="sc3 sc3-country-div">
+      <div class="sc3-country-name" *ngFor="let country of countries">
+        <p class="sc3-country-names">{{ country }}</p>
+      </div>
+    </div>
+    <div class="sc3 sc3-country-div2">
+      <div class="sc3-country-left">
+        <img src="assets\images\blogs\Rectangle.svg" />
+        <p class="country-lfirst-p">all</p>
+        <p class="country-lsecond-p">
+          Study abroad joining the crash course for toefl entrance exam
+        </p>
+      </div>
+      <div class="sc3-country-right">
+        <div
+          class="sc3-country-rdata"
+          *ngFor="let country of country_right_data"
+        >
+          <img src="{{ country.img }}" />
+          <div class="sc3-country-rdetail">
+            <p class="sc3-country-rdetail-p1">{{ country.c_name }}</p>
+            <p class="sc3-country-rdetail-p2">{{ country.c_detail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc3 sc3-country-div3">
+      <div class="sc3-country-div3-1" *ngFor="let country of countries_data3">
+        <div class="sc3-country-div3-1left">
+          <p class="sc3-div3-p-one">{{ country.c_name }}</p>
+          <p class="sc3-div3-p-two">{{ country.c_feature }}</p>
+          <p class="sc3-div3-p-three">{{ country.c_detail }}</p>
+          <div class="sc3-div3-footer">
+            <p class="sc3-div3-p-four">Read more</p>
+            <img src="assets\images\blogs\Arrow 9.svg" />
+          </div>
+        </div>
+        <div class="sc3-country-div3-1right">
+          <img src="{{ country.img }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <app-common-footer></app-common-footer>
+</div>

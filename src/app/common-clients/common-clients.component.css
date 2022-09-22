@@ -1,0 +1,45 @@
+.home-first-text {
+  margin-left: 7%;
+  margin-right: 7%;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 46px;
+  color: #8b8686;
+}
+.home-second-text {
+  margin-left: 7%;
+  margin-right: 7%;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 140.9%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.container-position {
+  margin-left: 7%;
+  margin-right: 7%;
+  width: 86%;
+}
+.container-8 {
+  width: 100%;
+  height: 439px;
+  background: #e5e5e5;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.c8-second-text {
+  margin-top: 2%;
+}
+.c8-first-logos {
+  margin-top: 2%;
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,53 @@
+.header {
+  background: #ffffff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.header p {
+  margin: 0%;
+}
+.font-style-1 {
+  font-family: "Mariupol", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  color: #000000;
+}
+.upload-div {
+  height: 288px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(216, 220, 230, 0.52);
+  border-radius: 4px;
+}
+.upload-div img {
+  height: 168px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center;
+}
+.upload-div .btn {
+  background: #ffffff;
+  border: 1px solid #c8cdd7;
+  box-shadow: 0px 2px 4px rgba(216, 220, 230, 0.52);
+  border-radius: 4px;
+}
+.form-div {
+  box-shadow: 0px 2px 4px rgba(216, 220, 230, 0.52);
+  border-radius: 4px;
+}
+.form-div .input-form-div {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 80px;
+  padding-bottom: 10%;
+}
+.form-bottom .back {
+  background: #ffffff;
+  border: 1px solid #cacccf;
+  border-radius: 6px;
+}
+.form-bottom .save {
+  background: #21b873;
+  border-radius: 6px;
+}

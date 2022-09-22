@@ -1,0 +1,330 @@
+<!-- <div class="container-fluid"> -->
+<app-common-navbar></app-common-navbar>
+<!-- </div> -->
+<div class="d-flex flex-column">
+  <div
+    id="main-container"
+    class="container-fluid"
+    style="
+      background-image: url('/assets/images/cost-of-living/Rectangle 6410.svg');
+    "
+  >
+    <img id="c-dots" src="/assets/images/cost-of-living/Group 10166.svg" />
+    <div
+      class="col-12 sub-container1 d-flex flex-column align-items-center"
+      *ngIf="count == 0"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="col-8 sc1-div1 m-3 d-flex bg-white">
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <img src="/assets/images/cost-of-living/search.svg" />
+        </div>
+        <input class="col-8 form-control" placeholder="Search for countries" />
+      </div>
+      <div class="m-5 col-10 d-flex flex-column">
+        <p class="sc1-div2-p1">Popular Countries</p>
+        <div class="col-12 country-parent-div">
+          <div
+            class="col-12 country-div d-flex flex-column justify-content-center align-items-center"
+            *ngFor="let country of optionCountries"
+            (click)="countrySelected(country)"
+            [ngClass]="data.countrySelection[country.id] ? 'sc1-1-hover' : ''"
+            style="cursor: pointer"
+          >
+            <img src="{{ country.country_flag }}" />
+            <p class="sc1-country-div-p">{{ country.countryName }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 sub-container2 d-flex flex-column align-items-center"
+      *ngIf="count == 1"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="m-4 col-10">
+        <p class="font-size-one">Where will you be staying?</p>
+        <div class="col-12 d-flex justify-content-around">
+          <div
+            class="campus-div col-5 d-flex flex-column justify-content-center align-items-center"
+            (click)="campusSelected('On Campus')"
+            [ngClass]="
+              data.campusSelection.campus == 'On Campus' ? 'sc1-1-hover' : ''
+            "
+            style="cursor: pointer"
+          >
+            <img
+              src="/assets/images/cost-of-living/Commercial Construction.svg"
+            />
+            <p class="font-size-three">On Campus</p>
+          </div>
+          <div
+            class="campus-div col-5 d-flex flex-column justify-content-center align-items-center"
+            (click)="campusSelected('Outside Campus')"
+            [ngClass]="
+              data.campusSelection.campus == 'Outside Campus'
+                ? 'sc1-1-hover'
+                : ''
+            "
+            style="cursor: pointer"
+          >
+            <img src="/assets/images/cost-of-living/Workplace.svg" />
+            <p class="font-size-three">Outside Campus</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4 col-10">
+        <p class="font-size-one">How often you go outside campus in a month?</p>
+        <div class="col-12">
+          <p class="font-size-two">Outside visit in a month</p>
+          <!--<input
+          type="range"
+          class="form-range"
+          [min]="sc2_min_value"
+          [max]="sc2_max_value"
+          step="1"
+          [value]="outsideCampusRange"
+          (change)="change_slider($event)"
+        />-->
+          <ngx-slider
+            [(value)]="value1"
+            [options]="options1"
+            (click)="outsideVisitOne()"
+          ></ngx-slider>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 sub-container3 d-flex flex-column align-items-center"
+      *ngIf="count == 2"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="m-4 col-10">
+        <p class="font-size-one">How will you manage your food?</p>
+        <div class="col-12 campus-parent-div">
+          <div
+            class="campus-div col-12 d-flex flex-column justify-content-center align-items-center"
+            *ngFor="let food of manageFood"
+            (click)="foodTypeSelected(food)"
+            [ngClass]="
+              data.foodTypeSelection.mealType == food.mode ? 'sc1-1-hover' : ''
+            "
+            style="cursor: pointer"
+          >
+            <img src="{{ food.img }}" />
+            <p class="font-size-three">{{ food.mode }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="m-4 col-10">
+        <p class="font-size-one">How often you go outside campus in a month?</p>
+        <div class="col-12">
+          <p class="font-size-two">Outside visit in a month</p>
+          <!--<input
+          type="range"
+          class="form-range"
+          [min]="sc2_min_value"
+          [max]="sc2_max_value"
+          step="1"
+          [value]="outsideCampusRange"
+          (change)="change_slider($event)"
+        />-->
+          <ngx-slider
+            [(value)]="value2"
+            [options]="options2"
+            (click)="outsideVisitTwo()"
+          ></ngx-slider>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 sub-container4 d-flex flex-column align-items-center"
+      *ngIf="count == 3"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="m-4 col-10">
+        <p class="font-size-one">Where will you be staying?</p>
+        <div class="col-12 transport-parent-div">
+          <div
+            class="transport-div col-12 d-flex flex-column justify-content-center align-items-center"
+            *ngFor="let transport of transports"
+            (click)="transportSelected(transport)"
+            [ngClass]="
+              data.transportSelection == transport.transportName
+                ? 'sc1-1-hover'
+                : ''
+            "
+            style="cursor: pointer"
+          >
+            <img src="{{ transport.img }}" />
+            <p class="font-size-three">{{ transport.transportName }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 sub-container5 d-flex flex-column align-items-center"
+      *ngIf="count == 4"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="m-4 col-10">
+        <p class="font-size-one">Your mobile usage for calling purpose</p>
+        <div class="col-12 mobile-parent-div">
+          <div
+            class="mobile-div col-12 d-flex flex-column justify-content-center align-items-center"
+            *ngFor="let mobile of mobileUsage"
+            (click)="mobileSelected(mobile)"
+            [ngClass]="
+              data.mobileSelection == mobile.usage ? 'sc1-1-hover' : ''
+            "
+            style="cursor: pointer"
+          >
+            <img src="{{ mobile.img }}" />
+            <p class="font-size-three">{{ mobile.usage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 sub-container6 d-flex flex-column align-items-center"
+      *ngIf="count == 5"
+    >
+      <p class="m-4 sc1-p1">Cost of living Calculator</p>
+      <div class="m-4 col-10">
+        <p class="font-size-one">Select additional preference</p>
+        <div class="col-12 preference-parent-div">
+          <div
+            class="preference-div col-12 d-flex justify-content-start align-items-center"
+            *ngFor="let preference of preferences"
+            [ngClass]="
+              data.preferenceSelection[preference.id] ? 'sc1-1-hover' : ''
+            "
+            style="cursor: pointer"
+          >
+            <input
+              class="m-4 checkbox"
+              type="checkbox"
+              (click)="preferenceSelected(preference)"
+            />
+            <p class="m-4 font-size-three">{{ preference.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="footer" class="col-12 d-flex align-items-center">
+      <div class="col-6 d-flex justify-content-around align-items-center">
+        <circle-progress
+          *ngIf="count == 0"
+          [percent]="25"
+          [radius]="30"
+          [title]="'25%'"
+        ></circle-progress>
+        <circle-progress
+          *ngIf="count == 1"
+          [percent]="50"
+          [radius]="30"
+          [title]="'50%'"
+        ></circle-progress>
+        <circle-progress
+          *ngIf="count == 2"
+          [percent]="60"
+          [radius]="30"
+          [title]="'60%'"
+        ></circle-progress>
+        <circle-progress
+          *ngIf="count == 3"
+          [percent]="70"
+          [radius]="30"
+          [title]="'70%'"
+        ></circle-progress>
+        <circle-progress
+          *ngIf="count == 4"
+          [percent]="85"
+          [radius]="30"
+          [title]="'85%'"
+        ></circle-progress>
+        <circle-progress
+          *ngIf="count == 5"
+          [percent]="100"
+          [radius]="30"
+          [title]="'100%'"
+        ></circle-progress>
+        <p class="col-4 font-size-four">{{ page }}</p>
+      </div>
+      <div class="col-6 d-flex justify-content-around">
+        <button
+          class="btn col-3 previous"
+          *ngIf="count >= 1"
+          (click)="previous()"
+        >
+          {{ button1Name }}
+        </button>
+        <button class="btn col-3 next" (click)="next()" [disabled]="disable()">
+          {{ button2Name }}
+        </button>
+      </div>
+    </div>
+    <div class="progress" *ngIf="count == 0">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 25%; background: #21b873; border-radius: 4px"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <div class="progress" *ngIf="count == 1">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 50%; background: #21b873; border-radius: 4px"
+        aria-valuenow="50"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <div class="progress" *ngIf="count == 2">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 60%; background: #21b873; border-radius: 4px"
+        aria-valuenow="60"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <div class="progress" *ngIf="count == 3">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 70%; background: #21b873; border-radius: 4px"
+        aria-valuenow="70"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <div class="progress" *ngIf="count == 4">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 85%; background: #21b873; border-radius: 4px"
+        aria-valuenow="85"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <div class="progress" *ngIf="count == 5">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 100%; background: #21b873; border-radius: 4px"
+        aria-valuenow="100"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+</div>

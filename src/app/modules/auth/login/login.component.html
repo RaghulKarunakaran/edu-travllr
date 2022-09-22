@@ -1,0 +1,109 @@
+<!-- <div class="container"> -->
+
+<div class="col">
+  <div class="col1-greencard">
+    <!--<img src="assets\login img.png" />-->
+    <!--<img class="green-card" src="assets/images/sign-up/Rectangle 6443.svg" />-->
+    <div class="col1-whitecard">
+      <img id="whitecard-img" src="assets/images/login/Learning-bro 1.svg" />
+      <div id="whitecard-div">
+        <p id="whitecard-p1">Study Abroad</p>
+        <p id="whitecard-p2">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="heading">
+      <h1 class="page-heading">Login to your Account!</h1>
+      <span class="heading-text"
+        >Login with your email ID to access your account</span
+      >
+    </div>
+    <hr class="hr-class" />
+    <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+      <div class="inputs">
+        <label class="form-label" for="email">Phone number/ email id</label
+        ><!--<br />-->
+        <input
+          class="inputFields"
+          type="text"
+          id="email"
+          formControlName="email"
+        />
+        <span
+          style="color: red"
+          *ngIf="
+            !SignupForm.get('email')?.valid && SignupForm.get('email')?.touched
+          "
+          >Please enter a valid e-mail id or phone number</span
+        >
+      </div>
+      <br />
+      <div class="inputs">
+        <label for="inputPassword5" class="form-label">Password</label
+        ><!--<br />-->
+        <input
+          class="inputFields"
+          type="password"
+          id="inputPassword5"
+          formControlName="password"
+          aria-describedby="passwordHelpBlock"
+        />
+        <span
+          style="color: red"
+          *ngIf="
+            !SignupForm.get('password')?.valid &&
+            SignupForm.get('password')?.touched
+          "
+          >Please enter the password</span
+        >
+      </div>
+      <br />
+      <div class="button-content">
+        <button
+          type="submit"
+          class="btn loginButton"
+          [disabled]="!SignupForm.valid"
+        >
+          Login/Signup
+        </button>
+      </div>
+    </form>
+    <div class="link-content">
+      <p class="button-below-text">
+        Don't have an account?
+        <a style="color: #73cba3" routerLink="/signup"> Signup</a>
+      </p>
+    </div>
+    <div class="link-content-2">
+      <hr />
+      <a>or login with</a>
+      <hr />
+    </div>
+    <!--<a class="row" style="padding-left: 100px"
+      ><hr style="width: 210px" />
+      or login with
+      <hr style="width: 210px"
+    /></a>-->
+    <div class="link-content-3">
+      <p id="link-content-3-p1">Social Login</p>
+      <p id="link-content-3-p2">*For other country user</p>
+    </div>
+    <div class="social-login">
+      <div class="social-login-1">
+        <img src="assets/images/login/Google.svg" />
+      </div>
+      <div class="social-login-1">
+        <img src="assets/images/login/Group 8542.svg" />
+      </div>
+      <div class="social-login-1">
+        <img src="assets/images/login/Group 8543.svg" />
+      </div>
+    </div>
+    <img class="login-vector" src="assets/images/sign-up/Group 11170.svg" />
+  </div>
+</div>
+
+<!-- </div> -->

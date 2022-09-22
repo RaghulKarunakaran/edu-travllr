@@ -1,0 +1,130 @@
+.col {
+  height: 100%;
+  display: flex;
+}
+
+/*.col div{
+    flex:0.46;
+  }*/
+
+.col1-greencard {
+  /*background-color: #77c7a2;*/
+  background-image: url("/assets/images/sign-up/Group 11318.svg");
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}
+.col1-whitecard {
+  width: 70%;
+  height: 80%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#whitecard-div {
+  width: 80%;
+}
+#whitecard-img {
+  width: 60%;
+}
+#whitecard-p1 {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: #000000;
+}
+#whitecard-p2 {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #535353;
+}
+.col2 {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbfbfb;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+}
+.page-heading {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 50px;
+  color: #000000;
+}
+.heading-text {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: #5b5b5b;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.small-otp-input {
+  font-size: 30px;
+  width: 74px;
+  height: 74px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  z-index: 20;
+}
+.otpButton {
+  background-color: #73cba3;
+  color: #ffffff;
+  width: 100%;
+  height: 63px;
+}
+.otpButton:disabled {
+  cursor: not-allowed;
+  pointer-events: unset;
+}
+.resend-link {
+  margin-left: 50%;
+}
+.resend {
+  color: #73cba3;
+}
+.button-otp {
+  width: 60%;
+  z-index: 20;
+}
+.from-group {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.otp-vector {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
